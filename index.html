@@ -804,6 +804,9 @@
                 document.getElementById("price").innerText = `Precio actual: $${currentPrice}`;
                 updateChart(parseFloat(data.price));
 
+                // Actualiza el título de la pestaña con el precio actual
+                document.title = `${coin} $${currentPrice}`;
+                
                 // Verificar CHoCH
                 checkCHoCH(historicalPrices, parseFloat(data.price));
 
