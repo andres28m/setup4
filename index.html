@@ -185,10 +185,10 @@
 
         #price {
             margin-bottom: 3px;
-            margin-top: 10px;
+            margin-top: 3px;
             padding: 10px;
             text-align: center;
-            font-size: 25px;
+            font-size: 18px;
             border: 1px solid #444;
             border-radius: 5px;
             background-color: #2a2a2a;
@@ -411,12 +411,7 @@
             grid-row: 1 / span 3;
         }
 
-        /* Evitar márgenes en body */
-        body {
-            margin: 0;
-            overflow: hidden;
-            /* Evita el scroll */
-        }
+        
 
         .tres {
 
@@ -452,6 +447,8 @@
             background-color: #2a2a2a;
             overflow-y: auto;
         }
+
+        
     </style>
 
     <style>
@@ -475,33 +472,161 @@
             align-font: center;
             padding: 1px;
         }
+
+        /* Estilo para centrar y ajustar el iframe */
+        .iframe-container1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 450px;
+            height: 310px;
+            padding: 5px;
+            margin-bottom: 4px;
+            margin: 0 auto;
+        }
+
+        
     </style>
+
+    <style>
+        .dosg {
+            display: flex;
+            align-items: center;
+            gap: 3px; /* Espacio entre los widgets */
+        }
+        /* Estilos generales para el contenedor, encabezados y select */
+        .container1 {
+            margin: 4px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #1b263b;
+            border-radius: 15px;
+            box-shadow: 0px 0px 30px rgba(9, 255, 255, 0.7);
+            max-width: 425px;
+            margin: 0 auto;
+        }
+        .input1, #coinSelector {
+            width: 100%;
+            padding: 10px;
+            background-color: #0e172a;
+            border: 2px solid #09ffcf;
+            color: #d4f1ff;
+            font-size: 16px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .tradingview-widget-container1 {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        .tradingview_widget1 {
+            width: 100%;
+            max-width: 400px;
+            height: 900px;
+            border: 1px solid #421515;
+            border-radius: 5px;
+            background-color: #2a2a2a;
+            overflow-y: auto;
+        }
+    </style>
+
+    <style>
+        /* Contenedor general del slider */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            overflow: hidden;
+        }
+
+        /* Contenedor interno que contiene los elementos a deslizar */
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        /* Cada slide ocupa el mismo espacio */
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Flechas de navegación */
+        .prev, .next {
+            position: absolute;
+            top: 85%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.253);
+            color: rgb(223, 223, 223);
+            border: none;
+            padding: 20px;
+            cursor: pointer;
+        }
+        .prev {
+            left: 10px;
+            
+        }
+        .next {
+            right: 10px;
+            
+        }
+    </style>
+
+
 </head>
 
 <body>
 
     <div class="grid-container">
+
+        
+        
         <!-- Primer widget de TradingView: BTC/USDT (Columna izquierda, fila superior) -->
         <div class="tradingview-widget-container" style="grid-column: 1; grid-row: 1;">
+
+        <div class="dosg">
+
             <div class="tradingview-widget-container__widget"></div>
             <script type="text/javascript"
                 src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
                     {
-                        "width": "100%",
-                            "height": "100%",
-                                "symbol": "BINANCE:BTCUSDT",
-                                    "timezone": "Etc/UTC",
-                                        "theme": "dark",
-                                            "style": "1",
-                                                "locale": "en",
-                                                    "range": "YTD",
-                                                        "hide_side_toolbar": true,
-                                                            "details": true,
-                                                                "hotlist": true,
-                                                                    "calendar": false,
-                                                                        "support_host": "https://andres28m.github.io/PionexGK/"
+                        "max-width": "450",
+                            "width": "100%",
+                                "height": "310",
+                                    "symbol": "BINANCE:BTCUSDT",
+                                        "interval": "240",
+                                            "timezone": "Etc/UTC",
+                                                "theme": "dark",
+                                                    "style": "1",
+                                                        "locale": "en",
+                                                            "allow_symbol_change": false,
+                                                                "watchlist": [
+                                                                    "PIONEX:BTCUSDT.P",
+                                                                    "PIONEX:ETHUSDT.P", 
+                                                                    "PIONEX:TRXUSDT.P"
+                                                                ],
+                                                                    "details": true,
+                                                                        "hotlist": true,
+                                                                            "calendar": false,
+                                                                                "studies": [
+                                                                                    "STD;Divergence%1Indicator"
+                                                                                ],
+                                                                                    "support_host": "https://www.tradingview.com"
                     }
-                </script>
+            </script>
+
+            
+
+            <!-- TradingView Widget BEGIN -->
+            
+            <div class="iframe-container1">
+                <iframe src="https://andres28m.github.io/tpysl/" title="Contenido incrustado" width="480px" height="650px"></iframe>
+            </div>
+            <!-- TradingView Widget END -->
+
+        </div>
         </div>
 
         <!-- Segundo widget de TradingView: ETH/USDT (Columna izquierda, fila inferior) -->
@@ -514,13 +639,14 @@
                     {
                         "max-width": "980",
                             "width": "100%",
-                                "height": "610",
+                                "height": "600",
                                     "symbol": "PIONEX:BTCUSDT.P",
                                         "interval": "240",
                                             "timezone": "Etc/UTC",
                                                 "theme": "dark",
                                                     "style": "1",
                                                         "locale": "en",
+                                                        "hide_side_toolbar": false,
                                                             "allow_symbol_change": true,
                                                                 "watchlist": [
                                                                     "PIONEX:BTCUSDT.P",
@@ -565,7 +691,7 @@
 
         <!-- Tercer widget de TradingView: SOL/USDT (Columna derecha, ocupa toda la altura) -->
         <div style="grid-column: 2; grid-row: 1 / span 4;">
-            <div class="container" style="width: 500px; max-width: 600px; height: 100%; overflow-y: auto;">
+            <div class="container" style="width: 100%; max-width: 500px; height: 100%; overflow-y: auto;">
 
 
                 <div class="tres">
@@ -707,9 +833,10 @@
                 "container_id": "tradingview_widget_container",
                 "width": "100%",
                 "height": "300",
+                "interval": "240",
                 "timezone": "Etc/UTC",
                 "theme": "dark",
-                "style": "1",
+                "style": "3",
                 "locale": "en",
                 "range": "YTD",
                 "hide_side_toolbar": true,
@@ -806,7 +933,7 @@
 
                 // Actualiza el título de la pestaña con el precio actual
                 document.title = `${coin} $${currentPrice}`;
-                
+
                 // Verificar CHoCH
                 checkCHoCH(historicalPrices, parseFloat(data.price));
 
@@ -1321,13 +1448,208 @@
     <!-- Cuarto widget de TradingView: SOL/USDT (Columna derecha, ocupa toda la altura) -->
     <div style="grid-column: 3; grid-row: 1 / span 4;">
         <div class="container"
-            style="width: 100%; max-width: 400px; height: 910px; max-height: 910px; overflow-y: auto;">
+            style="width: 100%; max-width: 400px; height: 900px; overflow-y: auto;">
+ 
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+        async>
+            {
+                "symbols": [
+                    {
+                        "proName": "FOREXCOM:SPXUSD",
+                        "title": "S&P 500 Index"
+                    },
+                    {
+                        "proName": "FOREXCOM:NSXUSD",
+                        "title": "US 100 Cash CFD"
+                    },
+                    {
+                        "proName": "FX_IDC:EURUSD",
+                        "title": "EUR to USD"
+                    },
+                    {
+                        "proName": "BITSTAMP:BTCUSD",
+                        "title": "Bitcoin"
+                    },
+                    {
+                        "proName": "BITSTAMP:ETHUSD",
+                        "title": "Ethereum"
+                    },
+                    {
+                        "description": "GOLD",
+                        "proName": "TVC:GOLD"
+                    },
+                    {
+                        "description": "GOLD USA",
+                        "proName": "COMEX:GC1!"
+                    },
+                    {
+                        "description": "TSLA",
+                        "proName": "NASDAQ:TSLA"
+                    },
+                    {
+                        "description": "AAPL",
+                        "proName": "NASDAQ:AAPL"
+                    },
+                    {
+                        "description": "AMZN",
+                        "proName": "NASDAQ:AMZN"
+                    },
+                    {
+                        "description": "MSFT",
+                        "proName": "NASDAQ:MSFT"
+                    },
+                    {
+                        "description": "META",
+                        "proName": "NASDAQ:META"
+                    },
+                    {
+                        "description": "GOOGL",
+                        "proName": "NASDAQ:GOOGL"
+                    }
+                ],
+                    "showSymbolLogo": true,
+                        "isTransparent": false,
+                            "displayMode": "compact",
+                                "colorTheme": "dark",
+                                    "locale": "en"
+            }
+        </script>
+</div>
+<!-- TradingView Widget END -->
 
+<div class="slider-container">
+    <!-- Contenedor de los slides -->
+    <div class="slides">
+        <!-- Slide 1: iframe -->
+        <div class="slide">
             <div class="iframe-container">
-                <!-- iframe con el enlace -->
-                <iframe src="https://andres28m.github.io/choch/" title="Contenido incrustado"></iframe>
+                <iframe src="https://andres28m.github.io/choch/" title="Contenido incrustado" width="400" height="600"></iframe>
             </div>
+        </div>
 
+        <!-- Slide 2: TradingView Widget -->
+        <div class="slide">
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
+                    {
+                        "feedMode": "all_symbols",
+                            "isTransparent": false,
+                                "largeChartUrl": "https://andres28m.github.io/setup4/",
+                                    "displayMode": "compact",
+                                        "width": 360,
+                                            "height": 900,
+                                                "colorTheme": "dark",
+                                                    "locale": "en"
+                    }
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
+        </div>
+
+        <!-- Slide 3: TradingView Widget -->
+        <div class="slide">
+            <div class="container1">
+                <h2>Selecciona una moneda</h2>
+        
+                <!-- Selector de monedas -->
+                <select id="coinSelector" class="input1" onchange="updateWidget()">
+                    <option value="PIONEX:BTCUSDT.P">Bitcoin (BTC/USDT)</option>
+                    <option value="PIONEX:ETHUSDT.P">Ethereum (ETH/USDT)</option>
+                    <option value="PIONEX:BNBUSDT.P">Binance Coin (BNB/USDT)</option>
+                    <option value="PIONEX:FTMUSDT.P">FTM (FTM/USDT)</option>
+                    <option value="PIONEX:SOLUSDT.P">SOL (SOL/USDT)</option>
+                    <option value="PIONEX:AAVEUSDT.P">AAVE (AAVE/USDT)</option>
+                    <option value="PIONEX:SUPERUSDT.P">SUPER (SUPER/USDT)</option>
+                    <option value="PIONEX:ARKUSDT.P">ARK (ARK/USDT)</option>
+                    <option value="PIONEX:MKRUSDT.P">MKR (MKR/USDT)</option>
+                    <option value="PIONEX:UNIUSDT.P">UNI (UNI/USDT)</option>
+                    <option value="PIONEX:TONUSDT.P">TON (TON/USDT)</option>
+                    <option value="PIONEX:WIFUSDT.P">WIF (WIF/USDT)</option>
+                    <option value="PIONEX:LQTYUSDT.P">LQTY (LQTY/USDT)</option>
+        
+                    <!-- Más opciones de monedas aquí -->
+                </select>
+        
+                <!-- Contenedor del widget de TradingView -->
+                <div id="tradingview-widget1" class="tradingview-widget-container1">
+                    <div class="tradingview-widget-container1__widget"></div>
+        
+                    
+                </div>
+            </div>
+        
+            <script>
+                // Función para actualizar el widget de TradingView
+                function updateWidget() {
+                    const selectedCoin = document.getElementById('coinSelector').value;
+
+                    // Limpiar el contenedor del widget antes de cargar uno nuevo
+                    document.querySelector('.tradingview-widget-container1__widget').innerHTML = "";
+
+                    // Crear un script nuevo con los parámetros actualizados
+                    const script = document.createElement('script');
+                    script.type = 'text/javascript';
+                    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js';
+                    script.async = true;
+
+                    // Configuración del widget con la moneda seleccionada
+                    script.innerHTML = JSON.stringify({
+                        "interval": "1m",
+                        "width": "100%",
+                        "max-width": "430",
+                        "isTransparent": false,
+                        "height": 650,
+                        "symbol": selectedCoin,
+                        "showIntervalTabs": true,
+                        "displayMode": "multiple",
+                        "locale": "es",
+                        "colorTheme": "dark"
+                    });
+
+                    // Agregar el nuevo script al contenedor del widget
+                    document.querySelector('.tradingview-widget-container1__widget').appendChild(script);
+                }
+
+                // Cargar el widget con el valor inicial al abrir la página
+                document.addEventListener("DOMContentLoaded", updateWidget);
+            </script>
+        </div>
+
+
+    </div>
+
+    <!-- Botones de navegación -->
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+<script>
+    let currentIndex = 0;
+
+    function moveSlide(direction) {
+        const slides = document.querySelector('.slides');
+        const totalSlides = document.querySelectorAll('.slide').length;
+
+        // Actualizar el índice de la diapositiva actual
+        currentIndex += direction;
+
+        // Limitar el índice para evitar desbordamiento
+        if (currentIndex < 0) {
+            currentIndex = totalSlides - 1;
+        } else if (currentIndex >= totalSlides) {
+            currentIndex = 0;
+        }
+
+        // Mover el contenedor de las slides
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+</script>
+            <!-- TradingView Widget END -->
         </div>
 </body>
 
