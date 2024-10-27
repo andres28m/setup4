@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Setup4</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;500&display=swap');
 
@@ -377,6 +378,7 @@
         .grid-container {
             display: grid;
             width: 100%;
+            "height": 100%;
             grid-template-columns: 3fr;
             /* Dos columnas con un divisor central */
             grid-template-rows: 1fr 10px 1fr;
@@ -441,7 +443,7 @@
 
         .tradingview_widget {
             max-width: 100%;
-            height: 290px;
+            height: 310px;
             border: 1px solid #444;
             border-radius: 5px;
             background-color: #2a2a2a;
@@ -458,11 +460,12 @@
             justify-content: center;
             align-items: center;
             height: 100%;
+            width: 100%;
             padding: 1px;
         }
 
         iframe {
-            width: 400px;
+            width: 100%;
             /* Ajusta el ancho */
             height: 100%;
             /* Ajusta la altura */
@@ -478,8 +481,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 490px;
-            height: 330px;
+            width: 500px;
+            height: 310px;
             padding: 1px;
             margin: 0 auto;
         }
@@ -501,7 +504,7 @@
             border: 2px solid #1b263b;
             border-radius: 15px;
             box-shadow: 0px 0px 30px rgba(9, 255, 255, 0.7);
-            width: 490px;
+            max-width: 490px;
             margin: 0 auto;
         }
         .input1, #coinSelector {
@@ -580,8 +583,6 @@
 
     <div class="grid-container">
 
-        
-        
         <!-- Primer widget de TradingView: BTC/USDT (Columna izquierda, fila superior) -->
         <div class="tradingview-widget-container" style="grid-column: 1; grid-row: 1;">
 
@@ -591,8 +592,10 @@
             <script type="text/javascript"
                 src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
                     {
-                        "width": "100%",
-                                "height": "330",
+                        
+                          "width": "100%",
+                          "max-width": "490",
+                                "height": "310",
                                     "symbol": "BINANCE:BTCUSDT",
                                         "interval": "240",
                                             "timezone": "Etc/UTC",
@@ -637,7 +640,7 @@
                     {
                         "max-width": "980",
                             "width": "100%",
-                                "height": "630",
+                                "height": "580",
                                     "symbol": "PIONEX:BTCUSDT.P",
                                         "interval": "240",
                                             "timezone": "Etc/UTC",
@@ -689,7 +692,7 @@
 
         <!-- Tercer widget de TradingView: SOL/USDT (Columna derecha, ocupa toda la altura) -->
         <div style="grid-column: 2; grid-row: 1 / span 4;">
-            <div class="container" style="width: 100%; max-width: 500px; height: 100%; overflow-y: auto;">
+            <div class="container" style="width: 100%; max-width: 500px; height: 100%; max-height: 910; overflow-y: auto;">
 
 
                 <div class="tres">
@@ -1446,7 +1449,7 @@
     <!-- Cuarto widget de TradingView: SOL/USDT (Columna derecha, ocupa toda la altura) -->
     <div style="grid-column: 3; grid-row: 1 / span 4;">
         <div class="container"
-            style="width: 100%; max-width: 400px; height: 100%; overflow-y: auto;">
+            style="width: 100%; max-width: 400px; height: 100%; max-height: 910px; overflow-y: auto;">
  
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
@@ -1524,7 +1527,7 @@
         <!-- Slide 1: iframe -->
         <div class="slide">
             <div class="iframe-container">
-                <iframe src="https://andres28m.github.io/choch/" title="Contenido incrustado" width="400" height="100%"></iframe>
+                <iframe src="https://andres28m.github.io/choch/" title="Contenido incrustado" width="400" height="100%" max-height="910"></iframe>
             </div>
         </div>
 
