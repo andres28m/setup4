@@ -462,7 +462,7 @@
         }
 
         iframe {
-             width: 400px;
+            width: 400px;
             /* Ajusta el ancho */
             height: 100%;
             /* Ajusta la altura */
@@ -473,13 +473,14 @@
             padding: 1px;
         }
 
-        /* Estilo para centrar y ajustar el iframe */
+        /* Estilo para centrar y ajustar el iframe TP Y SL*/
         .iframe-container1 {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 490px;
             height: 310px;
+            padding: 1px;
             margin: 0 auto;
         }
 
@@ -500,7 +501,6 @@
             border: 2px solid #1b263b;
             border-radius: 15px;
             box-shadow: 0px 0px 30px rgba(9, 255, 255, 0.7);
-            width: 100%;
             max-width: 490px;
             margin: 0 auto;
         }
@@ -515,7 +515,7 @@
             margin-bottom: 20px;
             box-sizing: border-box;
         }
-
+        // Función widget de TradingVie Noticias
         .tradingview-widget-container1 {
             max-width: 100%;
             margin: 0 auto;
@@ -523,7 +523,7 @@
         .tradingview_widget1 {
             width: 100%;
             max-width: 400px;
-            height: 900px;
+            height: 100%;
             border: 1px solid #421515;
             border-radius: 5px;
             background-color: #2a2a2a;
@@ -591,8 +591,8 @@
             <script type="text/javascript"
                 src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
                     {
-                        "max-width": "450",
-                            "width": "100%",
+                        "max-width": "490",
+                          "width": "100%",
                                 "height": "310",
                                     "symbol": "BINANCE:BTCUSDT",
                                         "interval": "240",
@@ -638,7 +638,7 @@
                     {
                         "max-width": "980",
                             "width": "100%",
-                                "height": "610",
+                                "height": "600",
                                     "symbol": "PIONEX:BTCUSDT.P",
                                         "interval": "240",
                                             "timezone": "Etc/UTC",
@@ -1447,7 +1447,7 @@
     <!-- Cuarto widget de TradingView: SOL/USDT (Columna derecha, ocupa toda la altura) -->
     <div style="grid-column: 3; grid-row: 1 / span 4;">
         <div class="container"
-            style="width: 100%; max-width: 400px; height: 900px; overflow-y: auto;">
+            style="width: 100%; max-width: 400px; height: 100%; overflow-y: auto;">
  
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
@@ -1525,7 +1525,7 @@
         <!-- Slide 1: iframe -->
         <div class="slide">
             <div class="iframe-container">
-                <iframe src="https://andres28m.github.io/choch/" title="Contenido incrustado" width="400" height="600"></iframe>
+                <iframe src="https://andres28m.github.io/choch/" title="Contenido incrustado" width="400" height="100%"></iframe>
             </div>
         </div>
 
@@ -1541,7 +1541,8 @@
                                 "largeChartUrl": "https://andres28m.github.io/setup4/",
                                     "displayMode": "compact",
                                         "width": 360,
-                                            "height": 900,
+                                            "height": "100%",
+                                              "max-height": 900,
                                                 "colorTheme": "dark",
                                                     "locale": "en"
                     }
